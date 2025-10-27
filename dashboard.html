@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | High Throne of Sanctuary</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>📋 Church Dashboard</h1>
+    <button id="logoutBtn">Logout</button>
+  </header>
+
+  <main>
+    <section id="members">
+      <h2>👥 Members</h2>
+      <form id="memberForm">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="text" name="phone" placeholder="Phone Number" required>
+        <input type="text" name="ministry" placeholder="Ministry (e.g. Choir, Ushers)" required>
+        <button type="submit">Add Member</button>
+      </form>
+
+      <ul id="memberList"></ul>
+    </section>
+  </main>
+
+  <script type="module">
+    import { logout } from "./js/auth.js";
+    import "./js/members.js";
+
+    document.getElementById("logoutBtn").addEventListener("click", () => logout());
+  </script>
+</body>
+</html>
